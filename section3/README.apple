@@ -2,14 +2,14 @@
 
 Running GDB in Docker on an Apple Silicon Mac or another ARM64-based computer requires you to run GDB with special arguments. Here’s how.
 
- 1. In Docker, run GDB this way: gdb -ix fun.gdb
+ 1. In Docker, run GDB this way: gdb-multiarch -ix fun.gdb
  2. Specify the program you’re working on: fun-file "1" (note the quotes), or ff "1" for short.
  3. Run the program: run-fun [arguments], or rf for short. You’ll have to quote each argument. (The normal r/run will not work.)
 
 Here is an example session:
 ```
-kohler@Eddies-MacBook-Pro:asms1$ ../cs300-run-docker -a
-cs300-user@0968f6517c97:~/sections/section3$ gdb -ix fun.gdb
+malte@cs300$ ./cs300-run-docker -a
+cs300-user@0968f6517c97:~/sections/section3$ gdb-multiarch -ix fun.gdb
 GNU gdb (Ubuntu 12.0.90-0ubuntu1) 12.0.90
 ........
 The target architecture is set to "i386:x86-64".
